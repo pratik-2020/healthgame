@@ -39,6 +39,9 @@ app.use(express.text());
 app.use(fileUpload({
     useTempFiles: true
 }));
+app.get('/', (req, res) => {
+    res.send('Welcome');
+})
 app.get('/attendence',  (req, res) => {
     getAttendence(req, res);
 })
