@@ -11,6 +11,7 @@ const getAttendence = require('./routes/user/getAttendence');
 const updateSteps = require('./routes/user/updateSteps');
 // const { getMaxListeners } = require('./models/user');
 const mongoose = require('mongoose');
+const test = require('./routes/mail/test');
 const db = "mongodb+srv://pratik:pratik@healthgame.bolmv5y.mongodb.net/?retryWrites=true&w=majority";
 mongoose.connect(db, {
     useNewUrlParser: true,
@@ -54,7 +55,7 @@ app.get('/steps', (req, res) => {
     updateSteps(req, res);
 })
 app.get('/mail', (req, res) => {
-    getMail(req, res);
+    test(req, res);
 })
 app.delete('/user', (req, res) => {
     deleteUser(req, res);
